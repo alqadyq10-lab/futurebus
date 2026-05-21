@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "FB-2026-0001",
+    "name": "ليان الحموي",
+    "age": 8,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "عمّان",
+    "location": "عمّان الشرقية",
+    "guardian": "الأب",
+    "phone": "+962-79-1629072",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 46,
+      "mathScore": 74,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 76,
+      "attendanceSessions": 2,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "حاجة لفحص نظر",
+      "skin": "طبيعي",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-18"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260001"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0002",
+    "name": "رند الخطيب",
+    "age": 6,
+    "gender": "أنثى",
+    "country": "تركيا",
+    "city": "هاتاي",
+    "location": "هاتاي - تجمع حضري",
+    "guardian": "ولي أمر مسجل",
+    "phone": "+90-5226478448",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 17,
+      "mathScore": 37,
+      "aiLevel": "متوسط",
+      "lastLesson": "حل مسائل حياتية",
+      "progress": 13,
+      "attendanceSessions": 9,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "طبيعي",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "مرتفع",
+      "referralNeeded": true,
+      "lastCheck": "2026-04-04"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260002"
+    },
+    "notes": "يمكن تحويله لمركز تعليمي قريب"
+  },
+  {
+    "id": "FB-2026-0003",
+    "name": "ريم الخطيب",
+    "age": 13,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "الزرقاء",
+    "location": "مخيم الأزرق",
+    "guardian": "الأب",
+    "phone": "+962-79-2373299",
+    "schoolStatus": "ملتحق ويحتاج دعم",
+    "education": {
+      "literacyScore": 38,
+      "mathScore": 31,
+      "aiLevel": "متوسط",
+      "lastLesson": "حل مسائل حياتية",
+      "progress": 66,
+      "attendanceSessions": 6,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "حاجة لفحص نظر",
+      "skin": "طفح بسيط",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-20"
+    },
+    "documentation": {
+      "consent": false,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260003"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0004",
+    "name": "خالد القدسي",
+    "age": 8,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "عمّان",
+    "location": "عمّان الشرقية",
+    "guardian": "الخال",
+    "phone": "+962-79-9332820",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 73,
+      "mathScore": 40,
+      "aiLevel": "متقدم",
+      "lastLesson": "الحروف والقراءة المبكرة",
+      "progress": 17,
+      "attendanceSessions": 9,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "طفح بسيط",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-22"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260004"
+    },
+    "notes": "يمكن تحويله لمركز تعليمي قريب"
+  },
+  {
+    "id": "FB-2026-0005",
+    "name": "تالا الديري",
+    "age": 13,
+    "gender": "أنثى",
+    "country": "تركيا",
+    "city": "هاتاي",
+    "location": "هاتاي - تجمع حضري",
+    "guardian": "الأم",
+    "phone": "+90-5630098818",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 59,
+      "mathScore": 45,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 52,
+      "attendanceSessions": 1,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "جفاف جلدي",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "مرتفع",
+      "referralNeeded": true,
+      "lastCheck": "2026-04-13"
+    },
+    "documentation": {
+      "consent": false,
+      "documents": "وثائق ناقصة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260005"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0006",
+    "name": "يارا المصري",
+    "age": 14,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+962-79-3532032",
+    "schoolStatus": "متقطع عن المدرسة",
+    "education": {
+      "literacyScore": 90,
+      "mathScore": 53,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 78,
+      "attendanceSessions": 5,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "جفاف جلدي",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "متوسط",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-16"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260006"
+    },
+    "notes": "يحتاج متابعة أسبوعية"
+  },
+  {
+    "id": "FB-2026-0007",
+    "name": "جود الحوراني",
+    "age": 12,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "الزرقاء",
+    "location": "مخيم الأزرق",
+    "guardian": "ولي أمر مسجل",
+    "phone": "+962-79-7583025",
+    "schoolStatus": "ملتحق ويحتاج دعم",
+    "education": {
+      "literacyScore": 58,
+      "mathScore": 99,
+      "aiLevel": "متقدم",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 73,
+      "attendanceSessions": 1,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "حاجة لفحص نظر",
+      "skin": "طبيعي",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "مرتفع",
+      "referralNeeded": true,
+      "lastCheck": "2026-05-13"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260007"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0008",
+    "name": "نور الديري",
+    "age": 7,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "الزرقاء",
+    "location": "مخيم الأزرق",
+    "guardian": "الأم",
+    "phone": "+962-79-2179699",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 68,
+      "mathScore": 12,
+      "aiLevel": "أساسي",
+      "lastLesson": "حل مسائل حياتية",
+      "progress": 80,
+      "attendanceSessions": 3,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "حاجة لفحص نظر",
+      "skin": "جفاف جلدي",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-20"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260008"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0009",
+    "name": "هبة القدسي",
+    "age": 13,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+962-79-9662655",
+    "schoolStatus": "ملتحق ويحتاج دعم",
+    "education": {
+      "literacyScore": 94,
+      "mathScore": 33,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 21,
+      "attendanceSessions": 6,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "جفاف جلدي",
+      "nutrition": "طبيعي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-10"
+    },
+    "documentation": {
+      "consent": false,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260009"
+    },
+    "notes": "يفضل التعلم البصري"
+  },
+  {
+    "id": "FB-2026-0010",
+    "name": "مريم الديري",
+    "age": 11,
+    "gender": "ذكر",
+    "country": "تركيا",
+    "city": "غازي عنتاب",
+    "location": "غازي عنتاب - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+90-5965520292",
+    "schoolStatus": "ملتحق ويحتاج دعم",
+    "education": {
+      "literacyScore": 99,
+      "mathScore": 64,
+      "aiLevel": "أساسي",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 76,
+      "attendanceSessions": 9,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "جفاف جلدي",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "متوسط",
+      "referralNeeded": true,
+      "lastCheck": "2026-04-24"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260010"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0011",
+    "name": "هبة الناصر",
+    "age": 9,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "عمّان",
+    "location": "عمّان الشرقية",
+    "guardian": "الخال",
+    "phone": "+962-79-4428816",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 10,
+      "mathScore": 28,
+      "aiLevel": "متقدم",
+      "lastLesson": "حل مسائل حياتية",
+      "progress": 52,
+      "attendanceSessions": 6,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "متوسط",
+      "referralNeeded": true,
+      "lastCheck": "2026-05-03"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260011"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0012",
+    "name": "محمد القدسي",
+    "age": 8,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+962-79-3852188",
+    "schoolStatus": "ملتحق ويحتاج دعم",
+    "education": {
+      "literacyScore": 51,
+      "mathScore": 95,
+      "aiLevel": "أساسي",
+      "lastLesson": "الحروف والقراءة المبكرة",
+      "progress": 58,
+      "attendanceSessions": 8,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-27"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق ناقصة",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260012"
+    },
+    "notes": "يفضل التعلم البصري"
+  },
+  {
+    "id": "FB-2026-0013",
+    "name": "رند الناصر",
+    "age": 14,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "الزرقاء",
+    "location": "مخيم الأزرق",
+    "guardian": "الأب",
+    "phone": "+962-79-1469656",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 95,
+      "mathScore": 17,
+      "aiLevel": "متوسط",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 21,
+      "attendanceSessions": 9,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "جفاف جلدي",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-18"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260013"
+    },
+    "notes": "يفضل التعلم البصري"
+  },
+  {
+    "id": "FB-2026-0014",
+    "name": "كرم الخطيب",
+    "age": 14,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "ولي أمر مسجل",
+    "phone": "+962-79-1065976",
+    "schoolStatus": "متقطع عن المدرسة",
+    "education": {
+      "literacyScore": 2,
+      "mathScore": 56,
+      "aiLevel": "أساسي",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 75,
+      "attendanceSessions": 9,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "طبيعي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-02"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260014"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0015",
+    "name": "سلمى الحسن",
+    "age": 14,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "المفرق",
+    "location": "مخيم الزعتري",
+    "guardian": "الأم",
+    "phone": "+962-79-8436474",
+    "schoolStatus": "متقطع عن المدرسة",
+    "education": {
+      "literacyScore": 64,
+      "mathScore": 57,
+      "aiLevel": "متوسط",
+      "lastLesson": "حل مسائل حياتية",
+      "progress": 13,
+      "attendanceSessions": 2,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "طفح بسيط",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-18"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260015"
+    },
+    "notes": "يمكن تحويله لمركز تعليمي قريب"
+  },
+  {
+    "id": "FB-2026-0016",
+    "name": "محمد الحوراني",
+    "age": 14,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "عمّان",
+    "location": "عمّان الشرقية",
+    "guardian": "الأب",
+    "phone": "+962-79-8186330",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 56,
+      "mathScore": 40,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 23,
+      "attendanceSessions": 7,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "طبيعي",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-21"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260016"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0017",
+    "name": "رند الحموي",
+    "age": 9,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الجدة",
+    "phone": "+962-79-6689424",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 20,
+      "mathScore": 90,
+      "aiLevel": "متقدم",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 28,
+      "attendanceSessions": 4,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "طفح بسيط",
+      "nutrition": "طبيعي",
+      "riskLevel": "مرتفع",
+      "referralNeeded": true,
+      "lastCheck": "2026-05-12"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260017"
+    },
+    "notes": "يحتاج متابعة أسبوعية"
+  },
+  {
+    "id": "FB-2026-0018",
+    "name": "زين الحسن",
+    "age": 11,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+962-79-5537332",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 10,
+      "mathScore": 33,
+      "aiLevel": "أساسي",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 37,
+      "attendanceSessions": 2,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-17"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260018"
+    },
+    "notes": "يفضل التعلم البصري"
+  },
+  {
+    "id": "FB-2026-0019",
+    "name": "لمى الناصر",
+    "age": 8,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "المفرق",
+    "location": "مخيم الزعتري",
+    "guardian": "الأم",
+    "phone": "+962-79-5436751",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 33,
+      "mathScore": 10,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 10,
+      "attendanceSessions": 2,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "طفح بسيط",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-20"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260019"
+    },
+    "notes": "يحتاج متابعة أسبوعية"
+  },
+  {
+    "id": "FB-2026-0020",
+    "name": "عمر الشامي",
+    "age": 10,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "الزرقاء",
+    "location": "مخيم الأزرق",
+    "guardian": "الجدة",
+    "phone": "+962-79-9390094",
+    "schoolStatus": "متقطع عن المدرسة",
+    "education": {
+      "literacyScore": 67,
+      "mathScore": 97,
+      "aiLevel": "أساسي",
+      "lastLesson": "جمع وطرح حتى 100",
+      "progress": 47,
+      "attendanceSessions": 5,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "طبيعي",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-01"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260020"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0021",
+    "name": "أنس الشامي",
+    "age": 13,
+    "gender": "ذكر",
+    "country": "تركيا",
+    "city": "غازي عنتاب",
+    "location": "غازي عنتاب - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+90-5346494886",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 69,
+      "mathScore": 50,
+      "aiLevel": "متوسط",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 63,
+      "attendanceSessions": 8,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "احمرار خفيف",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-27"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260021"
+    },
+    "notes": "يفضل التعلم البصري"
+  },
+  {
+    "id": "FB-2026-0022",
+    "name": "يزن الشامي",
+    "age": 8,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الأم",
+    "phone": "+962-79-8708341",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 85,
+      "mathScore": 36,
+      "aiLevel": "أساسي",
+      "lastLesson": "قراءة نص قصير",
+      "progress": 56,
+      "attendanceSessions": 9,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "طبيعي",
+      "riskLevel": "متوسط",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-12"
+    },
+    "documentation": {
+      "consent": false,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260022"
+    },
+    "notes": "يحتاج متابعة أسبوعية"
+  },
+  {
+    "id": "FB-2026-0023",
+    "name": "أنس الحوراني",
+    "age": 9,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "عمّان",
+    "location": "عمّان الشرقية",
+    "guardian": "الأب",
+    "phone": "+962-79-5163759",
+    "schoolStatus": "متقطع عن المدرسة",
+    "education": {
+      "literacyScore": 60,
+      "mathScore": 35,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "الحروف والقراءة المبكرة",
+      "progress": 56,
+      "attendanceSessions": 2,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "طبيعي",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-19"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260023"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0024",
+    "name": "يوسف الحسن",
+    "age": 14,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "المفرق",
+    "location": "مخيم الزعتري",
+    "guardian": "ولي أمر مسجل",
+    "phone": "+962-79-8201531",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 36,
+      "mathScore": 92,
+      "aiLevel": "أساسي",
+      "lastLesson": "حل مسائل حياتية",
+      "progress": 71,
+      "attendanceSessions": 3,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "جفاف جلدي",
+      "nutrition": "طبيعي",
+      "riskLevel": "متوسط",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-02"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق ناقصة",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260024"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0025",
+    "name": "محمد القدسي",
+    "age": 14,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "ولي أمر مسجل",
+    "phone": "+962-79-9979162",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 33,
+      "mathScore": 0,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "تعبير كتابي قصير",
+      "progress": 39,
+      "attendanceSessions": 8,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "متوسط",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-28"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "بحاجة مراجعة",
+      "qrToken": "QR-NB20260025"
+    },
+    "notes": "استجابة جيدة للأنشطة التفاعلية"
+  },
+  {
+    "id": "FB-2026-0026",
+    "name": "فارس الناصر",
+    "age": 13,
+    "gender": "أنثى",
+    "country": "تركيا",
+    "city": "هاتاي",
+    "location": "هاتاي - تجمع حضري",
+    "guardian": "الأم",
+    "phone": "+90-5743928632",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 78,
+      "mathScore": 80,
+      "aiLevel": "أساسي",
+      "lastLesson": "جمع وطرح حتى 100",
+      "progress": 44,
+      "attendanceSessions": 1,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "طفح بسيط",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-16"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق ناقصة",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260026"
+    },
+    "notes": "يحتاج متابعة أسبوعية"
+  },
+  {
+    "id": "FB-2026-0027",
+    "name": "رائد الحموي",
+    "age": 9,
+    "gender": "أنثى",
+    "country": "تركيا",
+    "city": "هاتاي",
+    "location": "هاتاي - تجمع حضري",
+    "guardian": "الأب",
+    "phone": "+90-5434658118",
+    "schoolStatus": "ملتحق ويحتاج دعم",
+    "education": {
+      "literacyScore": 59,
+      "mathScore": 59,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 44,
+      "attendanceSessions": 8,
+      "recommendation": "متابعة أسبوعية"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "طفح بسيط",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "متوسط",
+      "referralNeeded": false,
+      "lastCheck": "2026-03-27"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق ناقصة",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260027"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0028",
+    "name": "لمى الحوراني",
+    "age": 9,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "الزرقاء",
+    "location": "مخيم الأزرق",
+    "guardian": "ولي أمر مسجل",
+    "phone": "+962-79-5690370",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 46,
+      "mathScore": 16,
+      "aiLevel": "مبتدئ",
+      "lastLesson": "تعبير كتابي قصير",
+      "progress": 75,
+      "attendanceSessions": 5,
+      "recommendation": "تقوية رياضيات"
+    },
+    "health": {
+      "eye": "اشتباه التهاب",
+      "skin": "جفاف جلدي",
+      "nutrition": "حاجة تقييم غذائي",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-13"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "لا توجد وثائق",
+      "digitalFile": "غير منشأ",
+      "qrToken": "QR-NB20260028"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0029",
+    "name": "خالد العلي",
+    "age": 10,
+    "gender": "ذكر",
+    "country": "الأردن",
+    "city": "إربد",
+    "location": "إربد - تجمع حضري",
+    "guardian": "الجدة",
+    "phone": "+962-79-3013959",
+    "schoolStatus": "بانتظار تسجيل",
+    "education": {
+      "literacyScore": 42,
+      "mathScore": 0,
+      "aiLevel": "أساسي",
+      "lastLesson": "تعبير كتابي قصير",
+      "progress": 48,
+      "attendanceSessions": 2,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "طفح بسيط",
+      "nutrition": "إرهاق عام",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-04-03"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260029"
+    },
+    "notes": "بحاجة تواصل مع ولي الأمر"
+  },
+  {
+    "id": "FB-2026-0030",
+    "name": "رند الحموي",
+    "age": 6,
+    "gender": "أنثى",
+    "country": "الأردن",
+    "city": "عمّان",
+    "location": "عمّان الشرقية",
+    "guardian": "الخال",
+    "phone": "+962-79-4185138",
+    "schoolStatus": "خارج المدرسة",
+    "education": {
+      "literacyScore": 31,
+      "mathScore": 34,
+      "aiLevel": "متوسط",
+      "lastLesson": "ضرب وقسمة بسيطة",
+      "progress": 44,
+      "attendanceSessions": 3,
+      "recommendation": "جلسات قراءة مكثفة"
+    },
+    "health": {
+      "eye": "طبيعي",
+      "skin": "اشتباه عدوى جلدية",
+      "nutrition": "نقص وزن محتمل",
+      "riskLevel": "منخفض",
+      "referralNeeded": false,
+      "lastCheck": "2026-05-03"
+    },
+    "documentation": {
+      "consent": true,
+      "documents": "وثائق أساسية موجودة",
+      "digitalFile": "مكتمل",
+      "qrToken": "QR-NB20260030"
+    },
+    "notes": "يمكن تحويله لمركز تعليمي قريب"
+  }
+]
