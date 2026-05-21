@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حافلة المستقبل | FutureBus</title>
+  <meta name="description" content="موقع تجريبي لحافلة المستقبل: تعليم ذكي، فحص صحي أولي، وملف رقمي آمن للأطفال اللاجئين." />
+  <style>
+:root {
+  --bg: #f7f3ec;
+  --surface: #fffaf2;
+  --surface-2: #ffffff;
+  --text: #18221f;
+  --muted: #69736d;
+  --line: #e8dece;
+  --primary: #1f7a6b;
+  --primary-dark: #15594e;
+  --accent: #f0a83a;
+  --danger: #b74b4b;
+  --warning: #b7791f;
+  --success: #2f855a;
+  --shadow: 0 22px 60px rgba(25, 44, 38, .12);
+  --radius: 26px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: radial-gradient(circle at top right, rgba(31,122,107,.14), transparent 34rem), var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .9rem clamp(1rem, 4vw, 4.5rem);
+  background: rgba(255, 250, 242, .88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232,222,206,.8);
+}
+.brand { display: flex; align-items: center; gap: .7rem; }
+.brand-mark {
+  width: 44px; height: 44px; border-radius: 15px;
+  display: grid; place-items: center;
+  background: var(--primary); color: #fff;
+  font-weight: 800; font-size: 1.3rem;
+  box-shadow: 0 10px 24px rgba(31,122,107,.22);
+}
+.brand small { display: block; color: var(--muted); margin-top: -.25rem; }
+.nav { display: flex; gap: 1.2rem; color: var(--muted); }
+.nav a:hover { color: var(--primary-dark); }
+.nav-cta { padding: .65rem 1rem; border-radius: 999px; background: #e9f3ef; color: var(--primary-dark); font-weight: 700; }
+
+.section { padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 4vw, 4.5rem); }
+.hero {
+  min-height: 84vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  align-items: center;
+  gap: 2.5rem;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .35rem .75rem;
+  border-radius: 999px;
+  background: rgba(31,122,107,.1);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: .88rem;
+}
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+h1 { font-size: clamp(2.25rem, 6vw, 5rem); max-width: 930px; margin-top: 1rem; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 3rem); margin: .85rem 0 1rem; }
+h3 { font-size: 1.1rem; }
+p { color: var(--muted); margin: .7rem 0 0; }
+.hero p { max-width: 760px; font-size: 1.08rem; }
+.hero-actions, .head-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.4rem; }
+.btn {
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: .8rem 1.15rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.primary { background: var(--primary); color: white; box-shadow: 0 12px 24px rgba(31,122,107,.22); }
+.btn.primary:hover { background: var(--primary-dark); }
+.btn.secondary { background: var(--surface-2); color: var(--primary-dark); border: 1px solid var(--line); }
+.btn.full { width: 100%; }
+
+.hero-card {
+  background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,250,242,.95));
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.bus-visual {
+  min-height: 250px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(240,168,58,.18), transparent),
+    radial-gradient(circle at top left, rgba(31,122,107,.2), transparent 20rem);
+  border-radius: 26px;
+}
+.bus-body {
+  position: relative;
+  width: min(100%, 430px);
+  height: 150px;
+  border-radius: 48px 48px 24px 24px;
+  background: var(--accent);
+  border: 8px solid #243b35;
+  box-shadow: inset 0 -18px rgba(0,0,0,.08), 0 24px 50px rgba(0,0,0,.12);
+}
+.window, .screen {
+  position: absolute; top: 32px; width: 68px; height: 48px;
+  border-radius: 14px; background: #e9fbff; border: 5px solid #243b35;
+}
+.window:nth-child(1) { right: 40px; }
+.window:nth-child(2) { right: 120px; }
+.window:nth-child(3) { right: 200px; }
+.screen { right: 280px; display: grid; place-items: center; font-weight: 900; color: var(--primary); }
+.wheel {
+  position: absolute; bottom: -26px; width: 58px; height: 58px;
+  border-radius: 50%; background: #243b35; border: 10px solid #f7f3ec;
+}
+.wheel-a { right: 72px; }
+.wheel-b { left: 72px; }
+.mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin-top: 1rem; }
+.mini-grid div {
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 18px; padding: .9rem;
+}
+.mini-grid strong { display: block; }
+.mini-grid span { color: var(--muted); font-size: .85rem; }
+
+.split { display: grid; grid-template-columns: .85fr 1.15fr; gap: 2rem; align-items: start; }
+.problem-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.problem-list article, .service-card, .timeline article, .filters-panel, .data-panel, .detail-panel, .stat-card, .impact-card, .impact-summary {
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 34px rgba(25, 44, 38, .06);
+}
+.problem-list article { padding: 1.2rem; }
+.problem-list span { color: var(--accent); font-weight: 900; }
+.cards.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.service-card { padding: 1.4rem; min-height: 220px; }
+.icon { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; background: #e9f3ef; margin-bottom: 1rem; font-size: 1.45rem; }
+
+
+
+.how-section {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.32), rgba(255,255,255,.08)),
+    radial-gradient(circle at 8% 20%, rgba(240,168,58,.18), transparent 26rem);
+}
+.section-head.compact { align-items: center; }
+.workflow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.workflow::before {
+  content: '';
+  position: absolute;
+  top: 56px;
+  right: 7%;
+  left: 7%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(31,122,107,.08), rgba(31,122,107,.45), rgba(240,168,58,.45));
+  border-radius: 999px;
+  z-index: 0;
+}
+.step-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  min-height: 230px;
+  box-shadow: 0 14px 34px rgba(25, 44, 38, .06);
+}
+.step-num {
+  display: inline-flex;
+  color: var(--accent);
+  font-weight: 900;
+  font-size: .9rem;
+  margin-bottom: .6rem;
+}
+.step-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: #e9f3ef;
+  border: 1px solid rgba(31,122,107,.14);
+  font-size: 1.45rem;
+  margin-bottom: .9rem;
+}
+.step-card p { font-size: .92rem; }
+.journey-note {
+  margin-top: 1rem;
+  background: rgba(31,122,107,.1);
+  border: 1px solid rgba(31,122,107,.16);
+  border-radius: 22px;
+  padding: 1rem 1.2rem;
+  color: var(--primary-dark);
+}
+.journey-note strong { color: var(--primary-dark); }
+
+
+.impact-section {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(31,122,107,.14), transparent 24rem),
+    radial-gradient(circle at 12% 80%, rgba(240,168,58,.18), transparent 25rem);
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1.25fr repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.impact-card {
+  padding: 1.25rem;
+  min-height: 245px;
+  position: relative;
+  overflow: hidden;
+}
+.impact-card.featured {
+  background: linear-gradient(145deg, rgba(31,122,107,.92), rgba(21,89,78,.92));
+  color: #fff;
+}
+.impact-card.featured p { color: rgba(255,255,255,.82); }
+.impact-card::after {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  left: -34px;
+  bottom: -42px;
+  background: rgba(240,168,58,.13);
+}
+.impact-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: #e9f3ef;
+  border: 1px solid rgba(31,122,107,.14);
+  font-size: 1.45rem;
+  margin-bottom: 1rem;
+}
+.impact-card.featured .impact-icon { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.2); }
+.impact-card > strong {
+  display: block;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  margin-bottom: .55rem;
+  color: var(--primary-dark);
+}
+.impact-card.featured > strong { color: #fff; }
+.impact-card h3 { margin-bottom: .45rem; }
+.impact-summary {
+  margin-top: 1rem;
+  padding: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(255,255,255,.82);
+}
+.impact-summary p { max-width: 780px; }
+.impact-metrics { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: flex-end; }
+.impact-metrics span {
+  display: inline-flex;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  background: rgba(31,122,107,.1);
+  color: var(--primary-dark);
+  font-weight: 800;
+  font-size: .86rem;
+}
+
+.dashboard-section { background: rgba(255,255,255,.42); }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.4rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 1rem; }
+.stat-card { padding: 1.1rem; }
+.stat-card span { color: var(--muted); font-size: .88rem; }
+.stat-card strong { display: block; font-size: 1.8rem; line-height: 1.2; margin-top: .15rem; }
+.stat-card small { color: var(--primary-dark); }
+
+.dashboard-layout { display: grid; grid-template-columns: 270px minmax(0, 1fr) 330px; gap: 1rem; align-items: start; }
+.filters-panel, .data-panel, .detail-panel { padding: 1rem; }
+.filters-panel { position: sticky; top: 90px; }
+.filters-panel label { display: grid; gap: .4rem; margin-top: .85rem; color: var(--muted); font-size: .9rem; }
+input, select {
+  width: 100%; border: 1px solid var(--line); background: #fff;
+  border-radius: 16px; padding: .75rem .85rem; outline: none; color: var(--text);
+}
+input:focus, select:focus { border-color: rgba(31,122,107,.6); box-shadow: 0 0 0 4px rgba(31,122,107,.1); }
+.filters-panel .btn { margin-top: 1rem; }
+.panel-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .8rem; }
+.muted { color: var(--muted); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th, td { text-align: right; padding: .9rem .7rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { color: var(--muted); font-size: .86rem; font-weight: 800; }
+tbody tr { cursor: pointer; transition: background .18s ease; }
+tbody tr:hover, tbody tr.active { background: rgba(31,122,107,.07); }
+.child-cell strong { display: block; }
+.child-cell small { color: var(--muted); }
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; padding: .25rem .6rem; font-size: .78rem; font-weight: 800;
+  background: #eef2f0; color: #39443f; white-space: nowrap;
+}
+.badge.success { background: rgba(47,133,90,.13); color: var(--success); }
+.badge.warning { background: rgba(183,121,31,.14); color: var(--warning); }
+.badge.danger { background: rgba(183,75,75,.13); color: var(--danger); }
+.badge.primary { background: rgba(31,122,107,.12); color: var(--primary-dark); }
+.progress {
+  height: 9px; background: #edf0ed; border-radius: 999px; overflow: hidden; margin-top: .35rem;
+}
+.progress > span { display: block; height: 100%; background: var(--primary); border-radius: inherit; }
+.detail-panel { position: sticky; top: 90px; min-height: 420px; }
+.empty-state { min-height: 380px; display: grid; place-items: center; text-align: center; color: var(--muted); }
+.empty-state span { display: block; color: var(--text); font-weight: 900; }
+.profile-head { display: flex; align-items: center; gap: .8rem; border-bottom: 1px solid var(--line); padding-bottom: 1rem; margin-bottom: 1rem; }
+.avatar { width: 56px; height: 56px; border-radius: 20px; background: var(--primary); color: #fff; display: grid; place-items: center; font-weight: 900; font-size: 1.25rem; }
+.detail-block { margin-top: 1rem; }
+.detail-block h4 { margin: 0 0 .45rem; }
+.kv { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.kv div { background: #fbf8f1; border: 1px solid var(--line); border-radius: 16px; padding: .65rem; }
+.kv span { display: block; color: var(--muted); font-size: .78rem; }
+.kv strong { display: block; font-size: .95rem; }
+.qr-box {
+  width: 112px; height: 112px; border-radius: 18px; border: 8px solid #fff; box-shadow: 0 12px 25px rgba(0,0,0,.08);
+  background:
+    linear-gradient(90deg, #111 10px, transparent 10px) 0 0 / 20px 20px,
+    linear-gradient(#111 10px, transparent 10px) 0 0 / 20px 20px,
+    #fff;
+  margin-top: .7rem;
+}
+.alert { border-radius: 18px; padding: .8rem; background: rgba(240,168,58,.14); color: #70500d; }
+.alert.danger { background: rgba(183,75,75,.12); color: var(--danger); }
+
+.pilot { padding-bottom: 4rem; }
+.timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.2rem; }
+.timeline article { padding: 1.2rem; }
+.footer {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  padding: 1.5rem clamp(1rem, 4vw, 4.5rem);
+  border-top: 1px solid var(--line); color: var(--muted);
+}
+.footer strong { color: var(--text); }
+
+.modal {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(10, 20, 17, .45);
+  display: none; place-items: center; padding: 1rem;
+}
+.modal.open { display: grid; }
+.modal-card { position: relative; width: min(100%, 680px); background: var(--surface-2); border-radius: 28px; padding: 1.3rem; box-shadow: var(--shadow); }
+.close { position: absolute; left: 1rem; top: 1rem; border: 0; background: #f1f1f1; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; }
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .9rem; margin-top: 1rem; }
+.form-grid label { display: grid; gap: .35rem; color: var(--muted); }
+.form-grid .full { grid-column: 1 / -1; }
+.small-note { font-size: .85rem; }
+
+@media (max-width: 1180px) {
+  .hero, .split, .dashboard-layout { grid-template-columns: 1fr; }
+  .filters-panel, .detail-panel { position: static; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .workflow { grid-template-columns: repeat(3, 1fr); }
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+  .impact-card.featured { grid-column: 1 / -1; }
+  .impact-summary { align-items: stretch; flex-direction: column; }
+  .workflow::before { display: none; }
+}
+@media (max-width: 820px) {
+  .nav { display: none; }
+  .hero { min-height: auto; }
+  .cards.three, .problem-list, .timeline, .mini-grid, .stats-grid, .workflow, .impact-grid { grid-template-columns: 1fr; }
+  .section-head { align-items: stretch; flex-direction: column; }
+  .form-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 2.35rem; }
+}
+
+
+/* Updated visual identity */
+.brand-mark.image-mark {
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+.brand-mark.image-mark img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.project-visual {
+  width: min(100%, 680px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 28px rgba(25, 44, 38, .12));
+}
+.hero-card .bus-visual {
+  padding: 0.4rem;
+}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#hero" aria-label="العودة للبداية">
+      <span class="brand-mark image-mark"><img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%20role%3D%22img%22%20aria-label%3D%22%D8%B4%D8%B9%D8%A7%D8%B1%20%D8%AD%D8%A7%D9%81%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%2214%22%20y1%3D%2212%22%20x2%3D%22108%22%20y2%3D%22108%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%231f7a6b%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2315594e%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22s%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%227%22%20stdDeviation%3D%227%22%20flood-opacity%3D%22.22%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2230%22%20fill%3D%22url%28%23g%29%22/%3E%0A%20%20%3Ccircle%20cx%3D%2276%22%20cy%3D%2238%22%20r%3D%2222%22%20fill%3D%22%23dff5ef%22%20opacity%3D%22.9%22/%3E%0A%20%20%3Cpath%20d%3D%22M58%2038h36M76%2017c9%2010%209%2032%200%2042M76%2017c-9%2010-9%2032%200%2042%22%20fill%3D%22none%22%20stroke%3D%22%231f7a6b%22%20stroke-width%3D%223.2%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.75%22/%3E%0A%20%20%3Cpath%20d%3D%22M26%2073c4-17%2016-27%2034-27%2015%200%2027%208%2033%2021%22%20fill%3D%22none%22%20stroke%3D%22%23f0a83a%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.95%22/%3E%0A%20%20%3Cg%20filter%3D%22url%28%23s%29%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M24%2057h48c9%200%2018%208%2020%2018l2%2011H23a7%207%200%200%201-7-7V65a8%208%200%200%201%208-8Z%22%20fill%3D%22%23f0a83a%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M26%2064h16v13H26zM48%2064h16v13H48zM70%2065h11c3%200%205%203%206%206l1%206H70z%22%20fill%3D%22%23e9fbff%22%20stroke%3D%22%2315594e%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16%2083h78%22%20stroke%3D%22%2315594e%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2234%22%20cy%3D%2289%22%20r%3D%229%22%20fill%3D%22%23203b35%22%20stroke%3D%22%23fffaf2%22%20stroke-width%3D%224%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2275%22%20cy%3D%2289%22%20r%3D%229%22%20fill%3D%22%23203b35%22%20stroke%3D%22%23fffaf2%22%20stroke-width%3D%224%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M29%2031l4%208%208%204-8%204-4%208-4-8-8-4%208-4%204-8Z%22%20fill%3D%22%23fffaf2%22%20opacity%3D%22.95%22/%3E%0A%3C/svg%3E" alt="" /></span>
+      <span>
+        <strong>حافلة المستقبل</strong>
+        <small>FutureBus</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="#problem">المشكلة</a>
+      <a href="#solution">الحل</a>
+      <a href="#how-it-works">كيف تعمل؟</a>
+      <a href="#impact">الأثر المتوقع</a>
+      <a href="#dashboard">لوحة البيانات</a>
+      <a href="#pilot">النموذج التجريبي</a>
+    </nav>
+    <a class="nav-cta" href="#dashboard">عرض البيانات</a>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="hero-content">
+        <span class="eyebrow">مركز متنقل ذكي للأطفال اللاجئين</span>
+        <h1>نقرّب التعليم والصحة والتوثيق من الطفل، بدل أن نطلب منه الوصول إليها.</h1>
+        <p>
+          حافلة المستقبل تقدم تعليمًا تعويضيًا تفاعليًا، فحصًا صحيًا أوليًا، وملفًا رقميًا آمنًا داخل المخيمات والتجمعات.
+          هذه النسخة مربوطة ببيانات وهمية جاهزة للتبديل لاحقًا بقاعدة بيانات حقيقية.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#dashboard">افتح لوحة التحكم</a>
+          <a class="btn secondary" href="#how-it-works">كيف تعمل؟</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="ملخص سريع للمشروع">
+        <div class="bus-visual">
+          <img class="project-visual" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20820%20520%22%20role%3D%22img%22%20aria-label%3D%22%D8%B1%D8%B3%D9%85%20%D8%AA%D9%88%D8%B6%D9%8A%D8%AD%D9%8A%20%D9%84%D8%AD%D8%A7%D9%81%D9%84%D8%A9%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84%20%D8%AA%D9%82%D8%AF%D9%85%20%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%20%D9%88%D8%A7%D9%84%D8%B5%D8%AD%D8%A9%20%D9%88%D8%A7%D9%84%D8%AA%D9%88%D8%AB%D9%8A%D9%82%20%D9%84%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%2280%22%20y1%3D%2240%22%20x2%3D%22780%22%20y2%3D%22500%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%23e9f3ef%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fff4df%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bus%22%20x1%3D%22180%22%20y1%3D%22202%22%20x2%3D%22660%22%20y2%3D%22420%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20stop-color%3D%22%23f4bd54%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23f0a83a%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22shadow%22%20x%3D%22-20%25%22%20y%3D%22-20%25%22%20width%3D%22140%25%22%20height%3D%22140%25%22%3E%0A%20%20%20%20%20%20%3CfeDropShadow%20dx%3D%220%22%20dy%3D%2218%22%20stdDeviation%3D%2218%22%20flood-color%3D%22%23192c26%22%20flood-opacity%3D%22.15%22/%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22780%22%20height%3D%22480%22%20rx%3D%2254%22%20fill%3D%22url%28%23bg%29%22/%3E%0A%20%20%3Ccircle%20cx%3D%22638%22%20cy%3D%22154%22%20r%3D%2294%22%20fill%3D%22%23dff5ef%22/%3E%0A%20%20%3Cpath%20d%3D%22M544%20154h188M638%2060c39%2043%2039%20145%200%20188M638%2060c-39%2043-39%20145%200%20188%22%20fill%3D%22none%22%20stroke%3D%22%231f7a6b%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.55%22/%3E%0A%20%20%3Cpath%20d%3D%22M112%20330c52-128%20151-196%20296-196%20118%200%20217%2054%20289%20160%22%20fill%3D%22none%22%20stroke%3D%22%231f7a6b%22%20stroke-width%3D%2211%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.18%22/%3E%0A%20%20%3Cg%20filter%3D%22url%28%23shadow%29%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M154%20210h330c63%200%20118%2045%20132%20107l17%2077H144c-35%200-64-29-64-64v-56c0-35%2029-64%2064-64Z%22%20fill%3D%22url%28%23bus%29%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M135%20250h92v70h-92zM254%20250h92v70h-92zM373%20250h92v70h-92z%22%20fill%3D%22%23e9fbff%22%20stroke%3D%22%23203b35%22%20stroke-width%3D%228%22%20rx%3D%2212%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M499%20252h55c25%200%2046%2017%2052%2041l7%2027H499z%22%20fill%3D%22%23e9fbff%22%20stroke%3D%22%23203b35%22%20stroke-width%3D%228%22/%3E%0A%20%20%20%20%3Crect%20x%3D%22151%22%20y%3D%22342%22%20width%3D%22175%22%20height%3D%2236%22%20rx%3D%2218%22%20fill%3D%22%23fffaf2%22%20opacity%3D%22.75%22/%3E%0A%20%20%20%20%3Ctext%20x%3D%22239%22%20y%3D%22367%22%20text-anchor%3D%22middle%22%20font-size%3D%2223%22%20font-family%3D%22Tahoma%2C%20Arial%22%20font-weight%3D%22800%22%20fill%3D%22%2315594e%22%3EAI%20Learning%3C/text%3E%0A%20%20%20%20%3Cpath%20d%3D%22M82%20393h552%22%20stroke%3D%22%23203b35%22%20stroke-width%3D%2213%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22188%22%20cy%3D%22407%22%20r%3D%2242%22%20fill%3D%22%23203b35%22%20stroke%3D%22%23fffaf2%22%20stroke-width%3D%2213%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22520%22%20cy%3D%22407%22%20r%3D%2242%22%20fill%3D%22%23203b35%22%20stroke%3D%22%23fffaf2%22%20stroke-width%3D%2213%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22188%22%20cy%3D%22407%22%20r%3D%2212%22%20fill%3D%22%23f0a83a%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22520%22%20cy%3D%22407%22%20r%3D%2212%22%20fill%3D%22%23f0a83a%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20x%3D%22594%22%20y%3D%22276%22%20width%3D%22118%22%20height%3D%22104%22%20rx%3D%2226%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e8dece%22%20stroke-width%3D%225%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M631%20330h44M653%20308v44%22%20stroke%3D%22%231f7a6b%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Crect%20x%3D%2270%22%20y%3D%22117%22%20width%3D%22126%22%20height%3D%2294%22%20rx%3D%2224%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%23e8dece%22%20stroke-width%3D%225%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M100%20183h64M100%20160h74M100%20137h51%22%20stroke%3D%22%231f7a6b%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22176%22%20cy%3D%22136%22%20r%3D%2210%22%20fill%3D%22%23f0a83a%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22692%22%20cy%3D%22418%22%20r%3D%2224%22%20fill%3D%22%23f0a83a%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M658%20482c4-39%2023-58%2034-58s31%2019%2035%2058%22%20fill%3D%22%231f7a6b%22%20opacity%3D%22.92%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22744%22%20cy%3D%22425%22%20r%3D%2220%22%20fill%3D%22%23f0a83a%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M716%20482c3-32%2018-48%2028-48s26%2016%2029%2048%22%20fill%3D%22%2315594e%22%20opacity%3D%22.92%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3Cpath%20d%3D%22M252%2078l11%2022%2022%2011-22%2011-11%2022-11-22-22-11%2022-11%2011-22Z%22%20fill%3D%22%23f0a83a%22%20opacity%3D%22.95%22/%3E%0A%20%20%3Cpath%20d%3D%22M719%2068l7%2014%2014%207-14%207-7%2014-7-14-14-7%2014-7%207-14Z%22%20fill%3D%22%231f7a6b%22%20opacity%3D%22.75%22/%3E%0A%3C/svg%3E" alt="رسم توضيحي لحافلة المستقبل تجمع التعليم والصحة والتوثيق" />
+        </div>
+        <div class="mini-grid">
+          <div><strong>تعليم</strong><span>مسار حسب المستوى</span></div>
+          <div><strong>صحة</strong><span>رصد مؤشرات الخطر</span></div>
+          <div><strong>توثيق</strong><span>ملف QR تجريبي</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section split">
+      <div>
+        <span class="eyebrow">المشكلة</span>
+        <h2>العائق ليس الرغبة، بل الوصول.</h2>
+        <p>
+          أطفال كثيرون يفقدون الاتصال بالمدرسة والخدمات الصحية بسبب المسافة، الخوف، التكلفة، أو نقص الوثائق.
+          لذلك صُممت حافلة المستقبل لتكون نقطة خدمة قريبة وسهلة وآمنة.
+        </p>
+      </div>
+      <div class="problem-list">
+        <article><span>01</span><strong>المسافة</strong><p>مراكز الخدمة بعيدة أو غير منتظمة الوصول.</p></article>
+        <article><span>02</span><strong>الخوف</strong><p>الأهالي يترددون في إرسال الأطفال وحدهم أو خارج المنطقة.</p></article>
+        <article><span>03</span><strong>الوثائق</strong><p>غياب الملفات المنظمة يجعل المتابعة التعليمية والصحية أصعب.</p></article>
+      </div>
+    </section>
+
+    <section id="solution" class="section">
+      <span class="eyebrow">الحل</span>
+      <h2>ثلاث خدمات في زيارة واحدة</h2>
+      <div class="cards three">
+        <article class="service-card">
+          <div class="icon">📚</div>
+          <h3>تعليم ذكي</h3>
+          <p>اختبار قصير يحدد مستوى القراءة والرياضيات، ثم درس مناسب بدل الاعتماد فقط على العمر أو الصف.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon">🩺</div>
+          <h3>فحص أولي</h3>
+          <p>رصد مؤشرات الخطر في العين والجلد والتغذية، ثم إحالة الحالات المحتاجة لجهة طبية.</p>
+        </article>
+        <article class="service-card">
+          <div class="icon">🔐</div>
+          <h3>ملف رقمي آمن</h3>
+          <p>ملف تجريبي بموافقة ولي الأمر يتابع التعليم، الزيارات، والتحويلات عبر رمز QR داخلي.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section how-section">
+      <div class="section-head compact">
+        <div>
+          <span class="eyebrow">كيف تعمل الحافلة؟</span>
+          <h2>رحلة الطفل داخل حافلة المستقبل</h2>
+          <p>كل زيارة تتحول إلى خطوات واضحة: تسجيل آمن، تقييم، خدمة مباشرة، ثم متابعة قابلة للقياس.</p>
+        </div>
+        <a class="btn secondary" href="#dashboard">مشاهدة البيانات الناتجة</a>
+      </div>
+
+      <div class="workflow" aria-label="خطوات عمل حافلة المستقبل">
+        <article class="step-card">
+          <span class="step-num">01</span>
+          <div class="step-icon">🚌</div>
+          <h3>وصول الحافلة</h3>
+          <p>تصل الحافلة إلى نقطة آمنة داخل المخيم أو التجمع حسب جدول معلن للأهالي.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">02</span>
+          <div class="step-icon">👨‍👩‍👧</div>
+          <h3>موافقة ولي الأمر</h3>
+          <p>يتم شرح الخدمة للأهل، ثم تسجيل الموافقة قبل حفظ أي بيانات عن الطفل.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">03</span>
+          <div class="step-icon">📖</div>
+          <h3>تقييم تعليمي</h3>
+          <p>اختبار قصير يحدد مستوى القراءة والرياضيات، ويقترح مسار تعلم مناسب.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">04</span>
+          <div class="step-icon">🩺</div>
+          <h3>فحص صحي أولي</h3>
+          <p>رصد مؤشرات الخطر فقط، مثل مشاكل العين أو الجلد أو التغذية، دون تشخيص نهائي.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">05</span>
+          <div class="step-icon">🔐</div>
+          <h3>ملف رقمي</h3>
+          <p>إنشاء سجل QR داخلي يربط بين مستوى التعليم، الزيارات، والتنبيهات الصحية.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">06</span>
+          <div class="step-icon">📍</div>
+          <h3>إحالة ومتابعة</h3>
+          <p>تحويل الحالات المحتاجة للمدرسة أو العيادة الشريكة، ثم متابعة التقدم في لوحة البيانات.</p>
+        </article>
+      </div>
+
+      <div class="journey-note">
+        <strong>النتيجة:</strong> كل طفل يحصل على خدمة فورية، وخطة متابعة، وسجل واضح يساعد الفريق على معرفة من يحتاج دعمًا أولًا.
+      </div>
+    </section>
+
+    <section id="impact" class="section impact-section">
+      <div class="section-head compact">
+        <div>
+          <span class="eyebrow">الأثر المتوقع</span>
+          <h2>أرقام قابلة للقياس خلال أول 3 أشهر</h2>
+          <p>هذه أهداف تقديرية للنموذج التجريبي وليست نتائج نهائية. الهدف أن يعرف فريق التحكيم كيف سنقيس نجاح المشروع.</p>
+        </div>
+        <a class="btn secondary" href="#pilot">خطة التشغيل</a>
+      </div>
+
+      <div class="impact-grid" aria-label="مؤشرات الأثر المتوقع">
+        <article class="impact-card featured">
+          <span class="impact-icon">👧🏻</span>
+          <strong>300</strong>
+          <h3>طفل يتم الوصول إليهم</h3>
+          <p>حافلة واحدة تزور نقطة أو أكثر داخل المخيم وفق جدول أسبوعي واضح.</p>
+        </article>
+        <article class="impact-card">
+          <span class="impact-icon">📚</span>
+          <strong>75%</strong>
+          <h3>تحسن في الالتزام التعليمي</h3>
+          <p>قياس الحضور، إكمال الجلسات، والتقدم في القراءة والرياضيات.</p>
+        </article>
+        <article class="impact-card">
+          <span class="impact-icon">🩺</span>
+          <strong>40</strong>
+          <h3>حالة صحية تُحال مبكرًا</h3>
+          <p>رصد مؤشرات الخطر وتحويل الحالات المحتاجة للعيادة أو الشريك الطبي.</p>
+        </article>
+        <article class="impact-card">
+          <span class="impact-icon">🔐</span>
+          <strong>300</strong>
+          <h3>ملف رقمي آمن</h3>
+          <p>ملف متابعة داخلي بموافقة ولي الأمر لتسهيل التعليم والصحة والإحالة.</p>
+        </article>
+        <article class="impact-card">
+          <span class="impact-icon">🚌</span>
+          <strong>أقل</strong>
+          <h3>تنقل وتكلفة على العائلات</h3>
+          <p>بدل عدة زيارات للمدرسة والعيادة والتسجيل، تُنجز الخدمات الأساسية في زيارة واحدة.</p>
+        </article>
+      </div>
+
+      <div class="impact-summary">
+        <div>
+          <strong>ماذا سنثبت للجنة؟</strong>
+          <p>أن الحافلة ليست فكرة جميلة فقط، بل نموذج قابل للقياس: من وصلنا؟ من تحسن؟ من احتاج إحالة؟ ومن عاد إلى مسار التعليم؟</p>
+        </div>
+        <div class="impact-metrics">
+          <span>تعليم</span>
+          <span>صحة</span>
+          <span>توثيق</span>
+          <span>متابعة</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard-section">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">لوحة البيانات</span>
+          <h2>بيانات تجريبية للحافلة</h2>
+          <p>هذه البيانات وهمية بالكامل ومخصصة للعرض والاختبار فقط.</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn secondary" id="exportCsvBtn" type="button">تصدير CSV</button>
+          <button class="btn primary" id="openAddModal" type="button">إضافة طفل تجريبي</button>
+        </div>
+      </div>
+
+      <div class="stats-grid" id="statsGrid" aria-live="polite"></div>
+
+      <div class="dashboard-layout">
+        <aside class="filters-panel" aria-label="فلاتر البيانات">
+          <h3>تصفية البيانات</h3>
+          <label>
+            بحث بالاسم أو الرقم
+            <input id="searchInput" type="search" placeholder="مثال: سارة أو WS-2026" />
+          </label>
+          <label>
+            الموقع
+            <select id="locationFilter"><option value="all">كل المواقع</option></select>
+          </label>
+          <label>
+            الحالة التعليمية
+            <select id="schoolFilter"><option value="all">كل الحالات</option></select>
+          </label>
+          <label>
+            مستوى الخطورة الصحي
+            <select id="riskFilter"><option value="all">كل المستويات</option></select>
+          </label>
+          <button class="btn secondary full" id="resetFilters" type="button">إعادة ضبط</button>
+        </aside>
+
+        <section class="data-panel" aria-label="قائمة الأطفال">
+          <div class="panel-toolbar">
+            <h3>سجلات الأطفال</h3>
+            <span id="resultCount" class="muted"></span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>الطفل</th>
+                  <th>العمر</th>
+                  <th>الموقع</th>
+                  <th>التعليم</th>
+                  <th>الصحة</th>
+                  <th>الملف</th>
+                </tr>
+              </thead>
+              <tbody id="childrenTable"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="detail-panel" aria-live="polite">
+          <div id="childDetail" class="empty-state">
+            <span>اختر سجلًا من الجدول</span>
+            <p>ستظهر هنا بطاقة الطفل، التوصية التعليمية، والتنبيه الصحي.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pilot" class="section pilot">
+      <span class="eyebrow">النموذج التجريبي</span>
+      <h2>خطة تشغيل أولية لمدة 3 أشهر</h2>
+      <div class="timeline">
+        <article><strong>الشهر 1</strong><p>تجهيز الحافلة، تدريب الفريق، وإدخال البيانات الأساسية.</p></article>
+        <article><strong>الشهر 2</strong><p>تشغيل جلسات تعليم وفحص أولي، مع متابعة الحالات المحوّلة.</p></article>
+        <article><strong>الشهر 3</strong><p>قياس التحسن، تصدير التقرير، وتجهيز الربط مع بيانات حقيقية.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="addModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="close" id="closeAddModal" aria-label="إغلاق">×</button>
+      <h2 id="modalTitle">إضافة طفل تجريبي</h2>
+      <form id="addChildForm" class="form-grid">
+        <label>الاسم<input name="name" required placeholder="مثال: سارة الحسن" /></label>
+        <label>العمر<input name="age" type="number" min="6" max="14" value="10" required /></label>
+        <label>الجنس<select name="gender"><option>أنثى</option><option>ذكر</option></select></label>
+        <label>الموقع<input name="location" value="مخيم الزعتري" required /></label>
+        <label>الحالة التعليمية<select name="schoolStatus"><option>خارج المدرسة</option><option>متقطع عن المدرسة</option><option>ملتحق ويحتاج دعم</option><option>بانتظار تسجيل</option></select></label>
+        <label>مستوى الخطورة<select name="riskLevel"><option>منخفض</option><option>متوسط</option><option>مرتفع</option></select></label>
+        <button class="btn primary full" type="submit">حفظ في الواجهة</button>
+      </form>
+      <p class="muted small-note">الإضافة هنا مؤقتة داخل المتصفح. عند الربط الحقيقي سنرسلها إلى قاعدة البيانات.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <strong>حافلة المستقبل</strong>
+    <span>نسخة أولية للعرض — البيانات وهمية بالكامل.</span>
+  </footer>
+
+  <script>
+window.NOORBUS_DATA = [{"id": "FB-2026-0001", "name": "ليان الحموي", "age": 8, "gender": "أنثى", "country": "الأردن", "city": "عمّان", "location": "عمّان الشرقية", "guardian": "الأب", "phone": "+962-79-1629072", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 46, "mathScore": 74, "aiLevel": "مبتدئ", "lastLesson": "ضرب وقسمة بسيطة", "progress": 76, "attendanceSessions": 2, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "حاجة لفحص نظر", "skin": "طبيعي", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-03-18"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260001"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0002", "name": "رند الخطيب", "age": 6, "gender": "أنثى", "country": "تركيا", "city": "هاتاي", "location": "هاتاي - تجمع حضري", "guardian": "ولي أمر مسجل", "phone": "+90-5226478448", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 17, "mathScore": 37, "aiLevel": "متوسط", "lastLesson": "حل مسائل حياتية", "progress": 13, "attendanceSessions": 9, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "احمرار خفيف", "skin": "طبيعي", "nutrition": "نقص وزن محتمل", "riskLevel": "مرتفع", "referralNeeded": true, "lastCheck": "2026-04-04"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260002"}, "notes": "يمكن تحويله لمركز تعليمي قريب"}, {"id": "FB-2026-0003", "name": "ريم الخطيب", "age": 13, "gender": "أنثى", "country": "الأردن", "city": "الزرقاء", "location": "مخيم الأزرق", "guardian": "الأب", "phone": "+962-79-2373299", "schoolStatus": "ملتحق ويحتاج دعم", "education": {"literacyScore": 38, "mathScore": 31, "aiLevel": "متوسط", "lastLesson": "حل مسائل حياتية", "progress": 66, "attendanceSessions": 6, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "حاجة لفحص نظر", "skin": "طفح بسيط", "nutrition": "حاجة تقييم غذائي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-20"}, "documentation": {"consent": false, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260003"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0004", "name": "خالد القدسي", "age": 8, "gender": "أنثى", "country": "الأردن", "city": "عمّان", "location": "عمّان الشرقية", "guardian": "الخال", "phone": "+962-79-9332820", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 73, "mathScore": 40, "aiLevel": "متقدم", "lastLesson": "الحروف والقراءة المبكرة", "progress": 17, "attendanceSessions": 9, "recommendation": "تقوية رياضيات"}, "health": {"eye": "طبيعي", "skin": "طفح بسيط", "nutrition": "حاجة تقييم غذائي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-22"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260004"}, "notes": "يمكن تحويله لمركز تعليمي قريب"}, {"id": "FB-2026-0005", "name": "تالا الديري", "age": 13, "gender": "أنثى", "country": "تركيا", "city": "هاتاي", "location": "هاتاي - تجمع حضري", "guardian": "الأم", "phone": "+90-5630098818", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 59, "mathScore": 45, "aiLevel": "مبتدئ", "lastLesson": "قراءة نص قصير", "progress": 52, "attendanceSessions": 1, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "اشتباه التهاب", "skin": "جفاف جلدي", "nutrition": "نقص وزن محتمل", "riskLevel": "مرتفع", "referralNeeded": true, "lastCheck": "2026-04-13"}, "documentation": {"consent": false, "documents": "وثائق ناقصة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260005"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0006", "name": "يارا المصري", "age": 14, "gender": "أنثى", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الأب", "phone": "+962-79-3532032", "schoolStatus": "متقطع عن المدرسة", "education": {"literacyScore": 90, "mathScore": 53, "aiLevel": "مبتدئ", "lastLesson": "قراءة نص قصير", "progress": 78, "attendanceSessions": 5, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "احمرار خفيف", "skin": "جفاف جلدي", "nutrition": "نقص وزن محتمل", "riskLevel": "متوسط", "referralNeeded": false, "lastCheck": "2026-03-16"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260006"}, "notes": "يحتاج متابعة أسبوعية"}, {"id": "FB-2026-0007", "name": "جود الحوراني", "age": 12, "gender": "أنثى", "country": "الأردن", "city": "الزرقاء", "location": "مخيم الأزرق", "guardian": "ولي أمر مسجل", "phone": "+962-79-7583025", "schoolStatus": "ملتحق ويحتاج دعم", "education": {"literacyScore": 58, "mathScore": 99, "aiLevel": "متقدم", "lastLesson": "ضرب وقسمة بسيطة", "progress": 73, "attendanceSessions": 1, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "حاجة لفحص نظر", "skin": "طبيعي", "nutrition": "حاجة تقييم غذائي", "riskLevel": "مرتفع", "referralNeeded": true, "lastCheck": "2026-05-13"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260007"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0008", "name": "نور الديري", "age": 7, "gender": "أنثى", "country": "الأردن", "city": "الزرقاء", "location": "مخيم الأزرق", "guardian": "الأم", "phone": "+962-79-2179699", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 68, "mathScore": 12, "aiLevel": "أساسي", "lastLesson": "حل مسائل حياتية", "progress": 80, "attendanceSessions": 3, "recommendation": "تقوية رياضيات"}, "health": {"eye": "حاجة لفحص نظر", "skin": "جفاف جلدي", "nutrition": "إرهاق عام", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-20"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260008"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0009", "name": "هبة القدسي", "age": 13, "gender": "أنثى", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الأب", "phone": "+962-79-9662655", "schoolStatus": "ملتحق ويحتاج دعم", "education": {"literacyScore": 94, "mathScore": 33, "aiLevel": "مبتدئ", "lastLesson": "قراءة نص قصير", "progress": 21, "attendanceSessions": 6, "recommendation": "تقوية رياضيات"}, "health": {"eye": "اشتباه التهاب", "skin": "جفاف جلدي", "nutrition": "طبيعي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-10"}, "documentation": {"consent": false, "documents": "لا توجد وثائق", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260009"}, "notes": "يفضل التعلم البصري"}, {"id": "FB-2026-0010", "name": "مريم الديري", "age": 11, "gender": "ذكر", "country": "تركيا", "city": "غازي عنتاب", "location": "غازي عنتاب - تجمع حضري", "guardian": "الأب", "phone": "+90-5965520292", "schoolStatus": "ملتحق ويحتاج دعم", "education": {"literacyScore": 99, "mathScore": 64, "aiLevel": "أساسي", "lastLesson": "ضرب وقسمة بسيطة", "progress": 76, "attendanceSessions": 9, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "احمرار خفيف", "skin": "جفاف جلدي", "nutrition": "حاجة تقييم غذائي", "riskLevel": "متوسط", "referralNeeded": true, "lastCheck": "2026-04-24"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260010"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0011", "name": "هبة الناصر", "age": 9, "gender": "أنثى", "country": "الأردن", "city": "عمّان", "location": "عمّان الشرقية", "guardian": "الخال", "phone": "+962-79-4428816", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 10, "mathScore": 28, "aiLevel": "متقدم", "lastLesson": "حل مسائل حياتية", "progress": 52, "attendanceSessions": 6, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "طبيعي", "skin": "اشتباه عدوى جلدية", "nutrition": "إرهاق عام", "riskLevel": "متوسط", "referralNeeded": true, "lastCheck": "2026-05-03"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260011"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0012", "name": "محمد القدسي", "age": 8, "gender": "أنثى", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الأب", "phone": "+962-79-3852188", "schoolStatus": "ملتحق ويحتاج دعم", "education": {"literacyScore": 51, "mathScore": 95, "aiLevel": "أساسي", "lastLesson": "الحروف والقراءة المبكرة", "progress": 58, "attendanceSessions": 8, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "احمرار خفيف", "skin": "اشتباه عدوى جلدية", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-27"}, "documentation": {"consent": true, "documents": "وثائق ناقصة", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260012"}, "notes": "يفضل التعلم البصري"}, {"id": "FB-2026-0013", "name": "رند الناصر", "age": 14, "gender": "ذكر", "country": "الأردن", "city": "الزرقاء", "location": "مخيم الأزرق", "guardian": "الأب", "phone": "+962-79-1469656", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 95, "mathScore": 17, "aiLevel": "متوسط", "lastLesson": "قراءة نص قصير", "progress": 21, "attendanceSessions": 9, "recommendation": "تقوية رياضيات"}, "health": {"eye": "اشتباه التهاب", "skin": "جفاف جلدي", "nutrition": "إرهاق عام", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-18"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260013"}, "notes": "يفضل التعلم البصري"}, {"id": "FB-2026-0014", "name": "كرم الخطيب", "age": 14, "gender": "أنثى", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "ولي أمر مسجل", "phone": "+962-79-1065976", "schoolStatus": "متقطع عن المدرسة", "education": {"literacyScore": 2, "mathScore": 56, "aiLevel": "أساسي", "lastLesson": "قراءة نص قصير", "progress": 75, "attendanceSessions": 9, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "احمرار خفيف", "skin": "اشتباه عدوى جلدية", "nutrition": "طبيعي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-02"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260014"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0015", "name": "سلمى الحسن", "age": 14, "gender": "ذكر", "country": "الأردن", "city": "المفرق", "location": "مخيم الزعتري", "guardian": "الأم", "phone": "+962-79-8436474", "schoolStatus": "متقطع عن المدرسة", "education": {"literacyScore": 64, "mathScore": 57, "aiLevel": "متوسط", "lastLesson": "حل مسائل حياتية", "progress": 13, "attendanceSessions": 2, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "احمرار خفيف", "skin": "طفح بسيط", "nutrition": "حاجة تقييم غذائي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-18"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260015"}, "notes": "يمكن تحويله لمركز تعليمي قريب"}, {"id": "FB-2026-0016", "name": "محمد الحوراني", "age": 14, "gender": "ذكر", "country": "الأردن", "city": "عمّان", "location": "عمّان الشرقية", "guardian": "الأب", "phone": "+962-79-8186330", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 56, "mathScore": 40, "aiLevel": "مبتدئ", "lastLesson": "قراءة نص قصير", "progress": 23, "attendanceSessions": 7, "recommendation": "تقوية رياضيات"}, "health": {"eye": "اشتباه التهاب", "skin": "طبيعي", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-21"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260016"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0017", "name": "رند الحموي", "age": 9, "gender": "ذكر", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الجدة", "phone": "+962-79-6689424", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 20, "mathScore": 90, "aiLevel": "متقدم", "lastLesson": "قراءة نص قصير", "progress": 28, "attendanceSessions": 4, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "اشتباه التهاب", "skin": "طفح بسيط", "nutrition": "طبيعي", "riskLevel": "مرتفع", "referralNeeded": true, "lastCheck": "2026-05-12"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260017"}, "notes": "يحتاج متابعة أسبوعية"}, {"id": "FB-2026-0018", "name": "زين الحسن", "age": 11, "gender": "أنثى", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الأب", "phone": "+962-79-5537332", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 10, "mathScore": 33, "aiLevel": "أساسي", "lastLesson": "ضرب وقسمة بسيطة", "progress": 37, "attendanceSessions": 2, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "اشتباه التهاب", "skin": "اشتباه عدوى جلدية", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-17"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260018"}, "notes": "يفضل التعلم البصري"}, {"id": "FB-2026-0019", "name": "لمى الناصر", "age": 8, "gender": "أنثى", "country": "الأردن", "city": "المفرق", "location": "مخيم الزعتري", "guardian": "الأم", "phone": "+962-79-5436751", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 33, "mathScore": 10, "aiLevel": "مبتدئ", "lastLesson": "ضرب وقسمة بسيطة", "progress": 10, "attendanceSessions": 2, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "طبيعي", "skin": "طفح بسيط", "nutrition": "حاجة تقييم غذائي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-20"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260019"}, "notes": "يحتاج متابعة أسبوعية"}, {"id": "FB-2026-0020", "name": "عمر الشامي", "age": 10, "gender": "ذكر", "country": "الأردن", "city": "الزرقاء", "location": "مخيم الأزرق", "guardian": "الجدة", "phone": "+962-79-9390094", "schoolStatus": "متقطع عن المدرسة", "education": {"literacyScore": 67, "mathScore": 97, "aiLevel": "أساسي", "lastLesson": "جمع وطرح حتى 100", "progress": 47, "attendanceSessions": 5, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "اشتباه التهاب", "skin": "طبيعي", "nutrition": "إرهاق عام", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-03-01"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260020"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0021", "name": "أنس الشامي", "age": 13, "gender": "ذكر", "country": "تركيا", "city": "غازي عنتاب", "location": "غازي عنتاب - تجمع حضري", "guardian": "الأب", "phone": "+90-5346494886", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 69, "mathScore": 50, "aiLevel": "متوسط", "lastLesson": "قراءة نص قصير", "progress": 63, "attendanceSessions": 8, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "احمرار خفيف", "skin": "اشتباه عدوى جلدية", "nutrition": "إرهاق عام", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-03-27"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260021"}, "notes": "يفضل التعلم البصري"}, {"id": "FB-2026-0022", "name": "يزن الشامي", "age": 8, "gender": "ذكر", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الأم", "phone": "+962-79-8708341", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 85, "mathScore": 36, "aiLevel": "أساسي", "lastLesson": "قراءة نص قصير", "progress": 56, "attendanceSessions": 9, "recommendation": "تقوية رياضيات"}, "health": {"eye": "اشتباه التهاب", "skin": "اشتباه عدوى جلدية", "nutrition": "طبيعي", "riskLevel": "متوسط", "referralNeeded": false, "lastCheck": "2026-04-12"}, "documentation": {"consent": false, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260022"}, "notes": "يحتاج متابعة أسبوعية"}, {"id": "FB-2026-0023", "name": "أنس الحوراني", "age": 9, "gender": "أنثى", "country": "الأردن", "city": "عمّان", "location": "عمّان الشرقية", "guardian": "الأب", "phone": "+962-79-5163759", "schoolStatus": "متقطع عن المدرسة", "education": {"literacyScore": 60, "mathScore": 35, "aiLevel": "مبتدئ", "lastLesson": "الحروف والقراءة المبكرة", "progress": 56, "attendanceSessions": 2, "recommendation": "تقوية رياضيات"}, "health": {"eye": "اشتباه التهاب", "skin": "طبيعي", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-19"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "مكتمل", "qrToken": "QR-NB20260023"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0024", "name": "يوسف الحسن", "age": 14, "gender": "ذكر", "country": "الأردن", "city": "المفرق", "location": "مخيم الزعتري", "guardian": "ولي أمر مسجل", "phone": "+962-79-8201531", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 36, "mathScore": 92, "aiLevel": "أساسي", "lastLesson": "حل مسائل حياتية", "progress": 71, "attendanceSessions": 3, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "طبيعي", "skin": "جفاف جلدي", "nutrition": "طبيعي", "riskLevel": "متوسط", "referralNeeded": false, "lastCheck": "2026-03-02"}, "documentation": {"consent": true, "documents": "وثائق ناقصة", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260024"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0025", "name": "محمد القدسي", "age": 14, "gender": "ذكر", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "ولي أمر مسجل", "phone": "+962-79-9979162", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 33, "mathScore": 0, "aiLevel": "مبتدئ", "lastLesson": "تعبير كتابي قصير", "progress": 39, "attendanceSessions": 8, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "طبيعي", "skin": "اشتباه عدوى جلدية", "nutrition": "إرهاق عام", "riskLevel": "متوسط", "referralNeeded": false, "lastCheck": "2026-03-28"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "بحاجة مراجعة", "qrToken": "QR-NB20260025"}, "notes": "استجابة جيدة للأنشطة التفاعلية"}, {"id": "FB-2026-0026", "name": "فارس الناصر", "age": 13, "gender": "أنثى", "country": "تركيا", "city": "هاتاي", "location": "هاتاي - تجمع حضري", "guardian": "الأم", "phone": "+90-5743928632", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 78, "mathScore": 80, "aiLevel": "أساسي", "lastLesson": "جمع وطرح حتى 100", "progress": 44, "attendanceSessions": 1, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "اشتباه التهاب", "skin": "طفح بسيط", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-03-16"}, "documentation": {"consent": true, "documents": "وثائق ناقصة", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260026"}, "notes": "يحتاج متابعة أسبوعية"}, {"id": "FB-2026-0027", "name": "رائد الحموي", "age": 9, "gender": "أنثى", "country": "تركيا", "city": "هاتاي", "location": "هاتاي - تجمع حضري", "guardian": "الأب", "phone": "+90-5434658118", "schoolStatus": "ملتحق ويحتاج دعم", "education": {"literacyScore": 59, "mathScore": 59, "aiLevel": "مبتدئ", "lastLesson": "ضرب وقسمة بسيطة", "progress": 44, "attendanceSessions": 8, "recommendation": "متابعة أسبوعية"}, "health": {"eye": "طبيعي", "skin": "طفح بسيط", "nutrition": "حاجة تقييم غذائي", "riskLevel": "متوسط", "referralNeeded": false, "lastCheck": "2026-03-27"}, "documentation": {"consent": true, "documents": "وثائق ناقصة", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260027"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0028", "name": "لمى الحوراني", "age": 9, "gender": "ذكر", "country": "الأردن", "city": "الزرقاء", "location": "مخيم الأزرق", "guardian": "ولي أمر مسجل", "phone": "+962-79-5690370", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 46, "mathScore": 16, "aiLevel": "مبتدئ", "lastLesson": "تعبير كتابي قصير", "progress": 75, "attendanceSessions": 5, "recommendation": "تقوية رياضيات"}, "health": {"eye": "اشتباه التهاب", "skin": "جفاف جلدي", "nutrition": "حاجة تقييم غذائي", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-13"}, "documentation": {"consent": true, "documents": "لا توجد وثائق", "digitalFile": "غير منشأ", "qrToken": "QR-NB20260028"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0029", "name": "خالد العلي", "age": 10, "gender": "ذكر", "country": "الأردن", "city": "إربد", "location": "إربد - تجمع حضري", "guardian": "الجدة", "phone": "+962-79-3013959", "schoolStatus": "بانتظار تسجيل", "education": {"literacyScore": 42, "mathScore": 0, "aiLevel": "أساسي", "lastLesson": "تعبير كتابي قصير", "progress": 48, "attendanceSessions": 2, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "طبيعي", "skin": "طفح بسيط", "nutrition": "إرهاق عام", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-04-03"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260029"}, "notes": "بحاجة تواصل مع ولي الأمر"}, {"id": "FB-2026-0030", "name": "رند الحموي", "age": 6, "gender": "أنثى", "country": "الأردن", "city": "عمّان", "location": "عمّان الشرقية", "guardian": "الخال", "phone": "+962-79-4185138", "schoolStatus": "خارج المدرسة", "education": {"literacyScore": 31, "mathScore": 34, "aiLevel": "متوسط", "lastLesson": "ضرب وقسمة بسيطة", "progress": 44, "attendanceSessions": 3, "recommendation": "جلسات قراءة مكثفة"}, "health": {"eye": "طبيعي", "skin": "اشتباه عدوى جلدية", "nutrition": "نقص وزن محتمل", "riskLevel": "منخفض", "referralNeeded": false, "lastCheck": "2026-05-03"}, "documentation": {"consent": true, "documents": "وثائق أساسية موجودة", "digitalFile": "مكتمل", "qrToken": "QR-NB20260030"}, "notes": "يمكن تحويله لمركز تعليمي قريب"}];
+  </script>
+  <script>
+const DATA_SOURCE = 'data/fake_children.json';
+
+let children = [];
+let filteredChildren = [];
+let selectedId = null;
+
+const fallbackChildren = [
+  {
+    id: 'FB-2026-0000', name: 'نور الحسن', age: 10, gender: 'أنثى', country: 'الأردن', city: 'المفرق', location: 'مخيم الزعتري', guardian: 'الأم', phone: '+962-79-0000000', schoolStatus: 'خارج المدرسة',
+    education: { literacyScore: 38, mathScore: 42, aiLevel: 'مبتدئ', lastLesson: 'الحروف والقراءة المبكرة', progress: 24, attendanceSessions: 3, recommendation: 'جلسات قراءة مكثفة' },
+    health: { eye: 'احمرار خفيف', skin: 'طبيعي', nutrition: 'نقص وزن محتمل', riskLevel: 'متوسط', referralNeeded: true, lastCheck: '2026-05-10' },
+    documentation: { consent: true, documents: 'وثائق ناقصة', digitalFile: 'بحاجة مراجعة', qrToken: 'QR-NB20260000' },
+    notes: 'بيان احتياطي يظهر فقط إذا لم يعمل ملف JSON.'
+  }
+];
+
+const els = {
+  statsGrid: document.getElementById('statsGrid'),
+  table: document.getElementById('childrenTable'),
+  detail: document.getElementById('childDetail'),
+  resultCount: document.getElementById('resultCount'),
+  searchInput: document.getElementById('searchInput'),
+  locationFilter: document.getElementById('locationFilter'),
+  schoolFilter: document.getElementById('schoolFilter'),
+  riskFilter: document.getElementById('riskFilter'),
+  resetFilters: document.getElementById('resetFilters'),
+  exportCsvBtn: document.getElementById('exportCsvBtn'),
+  openAddModal: document.getElementById('openAddModal'),
+  closeAddModal: document.getElementById('closeAddModal'),
+  addModal: document.getElementById('addModal'),
+  addChildForm: document.getElementById('addChildForm')
+};
+
+async function init() {
+  try {
+    if (Array.isArray(window.NOORBUS_DATA) && window.NOORBUS_DATA.length) {
+      children = window.NOORBUS_DATA;
+    } else {
+      const response = await fetch(DATA_SOURCE);
+      if (!response.ok) throw new Error('تعذر تحميل البيانات');
+      children = await response.json();
+    }
+  } catch (error) {
+    console.warn('Using fallback data:', error);
+    children = fallbackChildren;
+  }
+
+  filteredChildren = [...children];
+  fillFilters();
+  bindEvents();
+  render();
+}
+
+function bindEvents() {
+  [els.searchInput, els.locationFilter, els.schoolFilter, els.riskFilter].forEach(input => {
+    input.addEventListener('input', applyFilters);
+    input.addEventListener('change', applyFilters);
+  });
+
+  els.resetFilters.addEventListener('click', () => {
+    els.searchInput.value = '';
+    els.locationFilter.value = 'all';
+    els.schoolFilter.value = 'all';
+    els.riskFilter.value = 'all';
+    applyFilters();
+  });
+
+  els.exportCsvBtn.addEventListener('click', exportCsv);
+  els.openAddModal.addEventListener('click', () => toggleModal(true));
+  els.closeAddModal.addEventListener('click', () => toggleModal(false));
+  els.addModal.addEventListener('click', event => {
+    if (event.target === els.addModal) toggleModal(false);
+  });
+  els.addChildForm.addEventListener('submit', addChild);
+}
+
+function fillFilters() {
+  const unique = key => [...new Set(children.map(child => child[key]))].sort();
+  const uniqueHealth = key => [...new Set(children.map(child => child.health[key]))].sort();
+
+  addOptions(els.locationFilter, unique('location'));
+  addOptions(els.schoolFilter, unique('schoolStatus'));
+  addOptions(els.riskFilter, uniqueHealth('riskLevel'));
+}
+
+function addOptions(select, values) {
+  values.forEach(value => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.textContent = value;
+    select.appendChild(option);
+  });
+}
+
+function applyFilters() {
+  const query = els.searchInput.value.trim().toLowerCase();
+  const location = els.locationFilter.value;
+  const school = els.schoolFilter.value;
+  const risk = els.riskFilter.value;
+
+  filteredChildren = children.filter(child => {
+    const matchesSearch = !query ||
+      child.name.toLowerCase().includes(query) ||
+      child.id.toLowerCase().includes(query) ||
+      child.location.toLowerCase().includes(query);
+    const matchesLocation = location === 'all' || child.location === location;
+    const matchesSchool = school === 'all' || child.schoolStatus === school;
+    const matchesRisk = risk === 'all' || child.health.riskLevel === risk;
+    return matchesSearch && matchesLocation && matchesSchool && matchesRisk;
+  });
+
+  if (!filteredChildren.some(child => child.id === selectedId)) selectedId = null;
+  render();
+}
+
+function render() {
+  renderStats();
+  renderTable();
+  renderDetail();
+}
+
+function renderStats() {
+  const total = filteredChildren.length;
+  const outSchool = filteredChildren.filter(child => child.schoolStatus === 'خارج المدرسة' || child.schoolStatus === 'بانتظار تسجيل').length;
+  const referrals = filteredChildren.filter(child => child.health.referralNeeded).length;
+  const documented = filteredChildren.filter(child => child.documentation.digitalFile === 'مكتمل').length;
+  const avgProgress = total ? Math.round(filteredChildren.reduce((sum, child) => sum + child.education.progress, 0) / total) : 0;
+
+  const stats = [
+    { label: 'إجمالي الأطفال', value: total, note: 'حسب الفلتر الحالي' },
+    { label: 'خارج المسار المدرسي', value: outSchool, note: 'خارج المدرسة أو بانتظار تسجيل' },
+    { label: 'متوسط التقدم', value: `${avgProgress}%`, note: 'في الجلسات التعليمية' },
+    { label: 'تحويلات صحية', value: referrals, note: 'تحتاج متابعة طبية' },
+    { label: 'ملفات مكتملة', value: documented, note: 'ملف رقمي جاهز' }
+  ];
+
+  els.statsGrid.innerHTML = stats.map(stat => `
+    <article class="stat-card">
+      <span>${stat.label}</span>
+      <strong>${stat.value}</strong>
+      <small>${stat.note}</small>
+    </article>
+  `).join('');
+}
+
+function renderTable() {
+  els.resultCount.textContent = `${filteredChildren.length} سجل`;
+
+  if (!filteredChildren.length) {
+    els.table.innerHTML = `<tr><td colspan="6" class="muted">لا توجد نتائج مطابقة للفلاتر الحالية.</td></tr>`;
+    return;
+  }
+
+  els.table.innerHTML = filteredChildren.map(child => `
+    <tr class="${child.id === selectedId ? 'active' : ''}" data-id="${child.id}">
+      <td class="child-cell"><strong>${child.name}</strong><small>${child.id} • ${child.gender}</small></td>
+      <td>${child.age}</td>
+      <td>${child.location}<br><small class="muted">${child.country} - ${child.city}</small></td>
+      <td>
+        <span class="badge primary">${child.schoolStatus}</span>
+        <div class="progress" aria-label="نسبة التقدم"><span style="width:${child.education.progress}%"></span></div>
+      </td>
+      <td>${riskBadge(child.health.riskLevel)}</td>
+      <td>${fileBadge(child.documentation.digitalFile)}</td>
+    </tr>
+  `).join('');
+
+  [...els.table.querySelectorAll('tr[data-id]')].forEach(row => {
+    row.addEventListener('click', () => {
+      selectedId = row.dataset.id;
+      render();
+    });
+  });
+}
+
+function renderDetail() {
+  const child = children.find(item => item.id === selectedId);
+  if (!child) {
+    els.detail.className = 'empty-state';
+    els.detail.innerHTML = `<span>اختر سجلًا من الجدول</span><p>ستظهر هنا بطاقة الطفل، التوصية التعليمية، والتنبيه الصحي.</p>`;
+    return;
+  }
+
+  els.detail.className = '';
+  const initials = child.name.split(' ').map(part => part[0]).join('').slice(0, 2);
+  const healthAlertClass = child.health.riskLevel === 'مرتفع' ? 'alert danger' : 'alert';
+  const referralText = child.health.referralNeeded ? 'يوصى بتحويل الحالة للمتابعة الطبية.' : 'لا توجد إحالة طبية عاجلة حسب الفحص الأولي.';
+
+  els.detail.innerHTML = `
+    <div class="profile-head">
+      <div class="avatar">${initials}</div>
+      <div>
+        <h3>${child.name}</h3>
+        <p>${child.id} • ${child.age} سنوات • ${child.location}</p>
+      </div>
+    </div>
+
+    <div class="detail-block">
+      <h4>التعليم</h4>
+      <div class="kv">
+        <div><span>مستوى AI</span><strong>${child.education.aiLevel}</strong></div>
+        <div><span>التقدم</span><strong>${child.education.progress}%</strong></div>
+        <div><span>قراءة</span><strong>${child.education.literacyScore}/100</strong></div>
+        <div><span>رياضيات</span><strong>${child.education.mathScore}/100</strong></div>
+      </div>
+      <p><strong>التوصية:</strong> ${child.education.recommendation}</p>
+      <p><strong>آخر درس:</strong> ${child.education.lastLesson}</p>
+    </div>
+
+    <div class="detail-block">
+      <h4>الصحة الأولية</h4>
+      <div class="${healthAlertClass}">${riskBadge(child.health.riskLevel)} ${referralText}</div>
+      <div class="kv" style="margin-top:.7rem">
+        <div><span>العين</span><strong>${child.health.eye}</strong></div>
+        <div><span>الجلد</span><strong>${child.health.skin}</strong></div>
+        <div><span>التغذية</span><strong>${child.health.nutrition}</strong></div>
+        <div><span>آخر فحص</span><strong>${child.health.lastCheck}</strong></div>
+      </div>
+    </div>
+
+    <div class="detail-block">
+      <h4>الملف الرقمي</h4>
+      <div class="kv">
+        <div><span>الموافقة</span><strong>${child.documentation.consent ? 'موجودة' : 'غير موجودة'}</strong></div>
+        <div><span>الوثائق</span><strong>${child.documentation.documents}</strong></div>
+        <div><span>حالة الملف</span><strong>${child.documentation.digitalFile}</strong></div>
+        <div><span>ولي الأمر</span><strong>${child.guardian}</strong></div>
+      </div>
+      <div class="qr-box" title="${child.documentation.qrToken}" aria-label="رمز QR تجريبي"></div>
+      <p><strong>ملاحظة:</strong> ${child.notes}</p>
+    </div>
+  `;
+}
+
+function riskBadge(risk) {
+  const classes = { 'منخفض': 'success', 'متوسط': 'warning', 'مرتفع': 'danger' };
+  return `<span class="badge ${classes[risk] || ''}">${risk}</span>`;
+}
+
+function fileBadge(status) {
+  const classes = { 'مكتمل': 'success', 'بحاجة مراجعة': 'warning', 'غير منشأ': 'danger' };
+  return `<span class="badge ${classes[status] || ''}">${status}</span>`;
+}
+
+function toggleModal(open) {
+  els.addModal.classList.toggle('open', open);
+  els.addModal.setAttribute('aria-hidden', String(!open));
+}
+
+function addChild(event) {
+  event.preventDefault();
+  const form = new FormData(event.target);
+  const nextNumber = children.length + 1;
+  const id = `FB-2026-${String(nextNumber).padStart(4, '0')}`;
+  const riskLevel = form.get('riskLevel');
+
+  const child = {
+    id,
+    name: form.get('name'),
+    age: Number(form.get('age')),
+    gender: form.get('gender'),
+    country: 'الأردن',
+    city: 'تجريبي',
+    location: form.get('location'),
+    guardian: 'ولي أمر مسجل',
+    phone: '+962-79-XXXXXXX',
+    schoolStatus: form.get('schoolStatus'),
+    education: {
+      literacyScore: 45,
+      mathScore: 40,
+      aiLevel: 'مبتدئ',
+      lastLesson: 'تقييم أولي',
+      progress: 0,
+      attendanceSessions: 0,
+      recommendation: 'جلسة تقييم أولى'
+    },
+    health: {
+      eye: 'بانتظار فحص',
+      skin: 'بانتظار فحص',
+      nutrition: 'بانتظار فحص',
+      riskLevel,
+      referralNeeded: riskLevel === 'مرتفع',
+      lastCheck: 'لم يتم بعد'
+    },
+    documentation: {
+      consent: true,
+      documents: 'وثائق ناقصة',
+      digitalFile: 'بحاجة مراجعة',
+      qrToken: 'QR-' + id.replaceAll('-', '')
+    },
+    notes: 'سجل تجريبي أضيف من الواجهة.'
+  };
+
+  children.unshift(child);
+  selectedId = id;
+  refillDynamicFilters();
+  applyFilters();
+  event.target.reset();
+  toggleModal(false);
+}
+
+function refillDynamicFilters() {
+  const currentLocation = els.locationFilter.value;
+  const currentSchool = els.schoolFilter.value;
+  const currentRisk = els.riskFilter.value;
+
+  els.locationFilter.innerHTML = '<option value="all">كل المواقع</option>';
+  els.schoolFilter.innerHTML = '<option value="all">كل الحالات</option>';
+  els.riskFilter.innerHTML = '<option value="all">كل المستويات</option>';
+  fillFilters();
+
+  if ([...els.locationFilter.options].some(opt => opt.value === currentLocation)) els.locationFilter.value = currentLocation;
+  if ([...els.schoolFilter.options].some(opt => opt.value === currentSchool)) els.schoolFilter.value = currentSchool;
+  if ([...els.riskFilter.options].some(opt => opt.value === currentRisk)) els.riskFilter.value = currentRisk;
+}
+
+function exportCsv() {
+  const header = ['id','name','age','gender','location','schoolStatus','progress','riskLevel','referralNeeded','digitalFile'];
+  const rows = filteredChildren.map(child => [
+    child.id,
+    child.name,
+    child.age,
+    child.gender,
+    child.location,
+    child.schoolStatus,
+    child.education.progress,
+    child.health.riskLevel,
+    child.health.referralNeeded ? 'yes' : 'no',
+    child.documentation.digitalFile
+  ]);
+
+  const csv = [header, ...rows]
+    .map(row => row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(','))
+    .join('\n');
+
+  const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'futurebus-filtered-data.csv';
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+init();
+
+  </script>
+</body>
+</html>
